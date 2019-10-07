@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-family: Arial;
+    font-size: 100%;
+    display: flex;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+@keyframes animationPole{
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 0 300px;
+    }
+}
+.barber-pole{
+    width: 100px;
+    height: 300px;
+    background:repeating-linear-gradient(
+      -37deg, 
+	  #FFF 0%,#FFF 10%,
+	  #f90103 10%,#f90103 20%,
+	  #FFF 20%,#FFF 30%,
+	  #f90103 30%,#f90103 40%,
+	  #FFF 40%,#FFF 50%,
+	  #f90103 50%,#f90103 60%,
+	  #FFF 60%,#FFF 70%,
+	  #f90103 70%,#f90103 80%,
+	  #FFF 80%,#FFF 90%,
+	  #f90103 90%,#f90103 100%
+    );
+    animation: animationPole 7s linear infinite;
+    border: 1px solid #cecdcd;
+    position: relative;
+}
+.pole-up,
+.pole-down{
+    width: 120px;
+    height: 20px;
+    position: absolute;
+    left: -10px;
+    background-color: #0170BE;
+}
+.pole-up{
+	top: -20px;
+  }
+  .pole-down{
+	bottom: -20px;
+  }
+.pole-up:before,
+.pole-down::before{
+    content:"";
+    width: 100px;
+    height: 40px;
+    position:absolute;
+    left:9px;
+    background-color: #0270be;
+}
+.pole-up:before{
+	top: -40px;
+	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .pole-down:before {
+	bottom: -40px;
+	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  } 
