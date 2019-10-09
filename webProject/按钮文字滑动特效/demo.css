@@ -1,0 +1,41 @@
+html,body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: palegoldenrod;
+}
+.box{
+    width: 200px;
+    height: 60px;
+    border: 2px solid springgreen;
+    text-align: center;
+    line-height: 60px;
+    overflow: hidden;
+}
+.box span{
+    display: inline-block;
+    color:blue;
+    transition:0.5s;
+}
+.box span:nth-child(odd) {
+	transform: translateY(-100%);
+}
+.box span:nth-child(even){
+    transform:translateY(100%)
+}
+.box span::before{
+    /* attr的意思是取值，取出data-text中的值 */
+    content:attr(data-text);
+    position:absolute;
+    color:red;
+}
+.box span:nth-child(odd)::before{
+    transform: translateY(100%)
+}
+.box span:nth-child(even)::before {
+	transform: translateY(-100%);
+}
+.box:hover span {
+    transform: translateY(0);
+}
