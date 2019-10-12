@@ -1,0 +1,64 @@
+html,body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:black;
+    height: 100%;
+}
+.menu{
+    padding: 0;
+}
+.menu li{
+    list-style-type: none;
+    /* color:pink; */
+    color: transparent;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    line-height: 1em;
+    width:7em;
+    margin:0.5em;
+    position: relative;
+    /* 这里设置relative是为了后面before after设置absolute */
+}
+.menu li:hover{
+    border-top: 1px solid silver;
+}
+.menu li::before{
+    content:attr(data-text);
+    position: absolute;
+    /* 绝对定位，相对于最近的非static定位 */
+    top:-0.5em;
+    left: 0;
+    width: 100%;
+    color:pink;
+    transition: 0.3s ease-out;
+    /* 不设置transition的话，当鼠标不在触碰时，就会很干硬的复原，这个是在复原时会有一定的动画 */
+}
+.menu li::after{
+    color:pink;
+    content:attr(data-text);
+    width: 100%;
+    position: absolute;
+    top:-0.5em;
+    left: 0;
+    transition: 0.3s ease-out;
+}
+.menu li::before{
+    clip-path:polygon(0 0,100% 0,100% 50%,0 50%)
+}
+.menu li::after{
+    clip-path:polygon(0 50%,100% 50%,100% 100%,0 100%)
+}
+.menu li:hover::before{
+    color:silver;
+    transition: left 0.3s ease-out;
+    transition-delay: 0.2s;
+    left:-0.15em;
+}
+.menu li:hover::after{
+    color:silver;
+    transition:left 0.3s ease-out;
+    transition-delay: 0.2s;
+    left:0.15em;
+}
