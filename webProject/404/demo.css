@@ -1,0 +1,102 @@
+body{
+    margin:0;
+    height: 100vh;
+    /* vh是相对于视窗的高度，100vh是视窗的总高度，这里我们就设为100vh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(dimgray,black);
+}
+.error{
+    display: flex;
+    width: 33em;
+    /* em是当前字体大小的倍数,33em表示33倍 */
+    justify-content: space-between;
+    /* 均匀排列每个子元素，首元素放置于起点，末尾元素放在终点 */
+}
+
+/* >表示直系后代 *表示所有 */
+/* 这里表示选择.error的子元素div(four,zero,four) */ 
+/* 也可以写成.error > div */
+.error > *{
+    width: 10em;
+    height: 10em;
+    position: relative;
+}
+
+/* 表示选中error下的所有span */
+.error span{
+    position:absolute;
+    box-sizing:border-box;
+    transition: 0.3s;
+    filter:opacity(0.8);
+    /* 将模糊或颜色偏移等图形效果应用于元素上    opacity 透明度 */
+}
+
+.four span:nth-child(1){
+    width: 20%;
+    height: 80%;
+    left:10%;
+    background-color: yellowgreen;
+}
+.four span:nth-child(2){
+    width: 100%;
+    height: 20%;
+    top:50%;
+    background-color: turquoise;
+}
+.four span:nth-child(3){
+    width: 20%;
+    height: 100%;
+    background-color: pink;
+    right: 10%;
+}
+.zero span:nth-child(1){
+    width:20%;
+    height: 100%;
+    background-color: skyblue;
+    left: 10%;
+}
+.zero span:nth-child(2){
+    width:20%;
+    height: 100%;
+    background-color: skyblue;
+    right: 10%;
+}
+.zero span:nth-child(3){
+    width: 100%;
+    height: 20%;
+    background-color: lightcoral;
+    bottom: 10%;
+}
+.zero span:nth-child(4){
+    width: 100%;
+    height: 20%;
+    background-color: lightcoral;
+    top: 10%;
+}
+.error:hover span{
+    background-color: whitesmoke;
+}
+.error:hover .four span:nth-child(1){
+    left:0;
+    top:20%;
+}
+.error:hover .four span:nth-child(2){
+    top:0;
+}
+.error:hover .four span:nth-child(3){
+    right: 0;
+}
+.error:hover .zero span:nth-child(1){
+    left: 0;
+}
+.error:hover .zero span:nth-child(2){
+    right:0;
+}
+.error:hover .zero span:nth-child(3){
+    bottom:0;
+}
+.error:hover .zero span:nth-child(4){
+    top:0;
+}
