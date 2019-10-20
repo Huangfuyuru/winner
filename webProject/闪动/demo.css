@@ -21,7 +21,7 @@ body {
 	line-height: 1.5em;
 	font-family: sans-serif;
 	position: relative;
-	/* animation: animate_text 2s linear infinite alternate; */
+	animation: animate_text 2s linear infinite alternate;
 }
 
 .box::before {
@@ -46,7 +46,7 @@ body {
 	}
 }
 
-/* @keyframes animate_text {
+@keyframes animate_text {
 	from {
 		color: lime;
 	}
@@ -54,4 +54,4 @@ body {
 	to {
 		color: yellow;
 	}
-} */ 
+}
